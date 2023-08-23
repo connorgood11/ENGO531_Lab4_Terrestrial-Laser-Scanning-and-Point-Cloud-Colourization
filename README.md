@@ -8,13 +8,15 @@ For this lab, we performed a laser scan of our object from the previous lab usin
 
 Laser scanning of the object was done in the room ENF 325. It was set up in the exact way as shown below in figure 1. The object is just out of view to the left of the image
 
-[![](RackMultipart20230823-1-fhl511_html_3845352238d10509.jpg)](https://cdn.discordapp.com/attachments/1022237451625955378/1049818763500990524/IMG_8261.jpg)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/d21dcaaf-5f65-4761-89f9-cbc84576c35e)
+
 
 _Figure 1: Image of laser scanner set up_
 
 A plot was created of the area. The origin was changed to be the location of the laser scanner, and the coordinates of the object points and camera points were converted to this new system.
 
-![](RackMultipart20230823-1-fhl511_html_45c5a65b7bc533c9.jpg)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/101d8907-3bc6-4c4f-8c6d-71edc1d66020)
+
 
 _Figure 2: Plot of object points, picture points and laser scanner origin_
 
@@ -109,7 +111,8 @@ _Table 6: Control point values_
 | 17 | -0.598 | -3.0118 | 1092.012 |
 | 18 | 0.813 | -3.009 | 1092.188 |
 
-![](RackMultipart20230823-1-fhl511_html_1a9970e7e701807a.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/a0b5f9c0-5fc3-4c11-a06f-eb585b53e10f)
+
 
 _Figure 3: Plot showing the standardized residual within expected threshold_
 
@@ -160,13 +163,15 @@ Some values were still highly correlated (values of 0.80 or higher), so it could
 
 Implemented a MATLAB function to perform a back projection to receive pixel coordinates from the 833,893 point cloud coordinates and adjusted EOPs and IOPs, leaving the system as a left-handed coordinate system and using K = -1.
 
-![](RackMultipart20230823-1-fhl511_html_51647abd829a6ef.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/af61c01a-08d8-4768-8735-c326998e2e3a)
+
 
 _Figure 4: Collinearity equations for back projection_
 
 A MATLAB function was created to use a for loop to iterate through each point cloud point and use the back projection function. It then searched the corresponding image from the used EOPs for the RGB values at the received pixel coordinates from the back projection function. The point cloud points that did not fall on the image were left as white. The RGB values were continually appended together and returned by the function to then be appended to the point cloud dataset columns. The program works based on the image number, so the code can be run to retrieve the RGB values for the point cloud data on any image required.
 
-![](RackMultipart20230823-1-fhl511_html_38f0841046ee8cd9.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/65432a13-6561-45dc-ba37-84655b2bf2ac)
+
 
 _Figure 5: Points with their xyz coordinates and RGB values_
 
@@ -174,19 +179,21 @@ _Figure 5: Points with their xyz coordinates and RGB values_
 
 To begin the analysis, the group added in the trimmed point cloud that was used for colourization. The area of interest is a group of eight lockers on the left of the wooden divider, the group kept the other parts in for analysis and to show how the group checked to see if the points were in each image.
 
-![](RackMultipart20230823-1-fhl511_html_16f9a9a45de714a5.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/4a14a3d1-c775-4ef3-8d19-33df22f358e9)
 
 _Figure 6: Trimmed point cloud used for colourization_
 
 In this point cloud image, you can see there are some areas that do not have points including the handles of each locker which is a reflective silver metal. The reflectiveness of the metal is why there was no return for the laser on those points as the intensity was too great for the scanner to recognize that there was a point there and did not register those laser returns.
 
-![](RackMultipart20230823-1-fhl511_html_6bdae0d2e30351.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/dc84fd7c-09d0-4db8-aa40-dc7ad39fc97d)
+
 
 _Figure 7: Lack of point returns on metal surfaces_
 
 There were also some 'noise' points still left in the groups point cloud after cleaning it up but due to the time it would have taken to remove every noise point the group determined it was not worth removing all these points. Noise points are deviations from the normal for an area, for example in the image below there are points in between the floor and the bottom of the lockers which in reality we know there is nothing there.
 
-![](RackMultipart20230823-1-fhl511_html_77038356fc40f730.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/3d39631e-19ba-4422-b701-705ffc641c75)
+
 
 _Figure 8: Noise points in point cloud_
 
@@ -205,13 +212,14 @@ _Table 10: Distances of image point to the origin_
 
 In order to obtain RGB values for our point cloud, we used Image 3 from our Lab 3, shown below in figure 9
 
-![](RackMultipart20230823-1-fhl511_html_ac702ec0e046ce8.jpg)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/64e69a26-f80f-4927-adf6-4274b6bd248c)
 
 _Figure 9: Image 3 taken during Lab 3_
 
 Using image three to colourize our point cloud, the group got the resulting point cloud with RBG values as shown below in figure 10.
 
-![](RackMultipart20230823-1-fhl511_html_94e2b873b02305f6.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/856d08eb-fa8e-49f1-8c4c-04153f85f136)
+
 
 _Figure 10: Colourized point cloud using image 3_
 
@@ -219,29 +227,33 @@ In the image above you can see the left side of the point cloud looks correct bu
 
 To try and mitigate this error the group then switched images to image four, seen in figure 11, to colourize our point cloud which can be seen in figure 12 below
 
-![](RackMultipart20230823-1-fhl511_html_38ee92db2ea8d38c.jpg)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/d31f147b-9913-4efd-9c7a-a526b5ab0fab)
+
 
 _Figure 11: Image 4 taken during Lab 3_
 
-![](RackMultipart20230823-1-fhl511_html_6944e98096aaf935.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/d0a6a8c8-5812-47f6-8ecf-453f65373504)
+
 
 _Figure 12: Colourized point cloud using image 4_
 
 To clarify, the group created a function that would check if the 3D points from the point cloud were in the image being used to colourize the point cloud and if they were not, they would be assigned RGB values that would colour them white. This can be shown more clearly in figure 13 below.
 
-![](RackMultipart20230823-1-fhl511_html_71b0be0cc0898617.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/f23e662e-2a23-47dd-a409-13e8cc6363ad)
+
 
 _Figure 13: White point cloud points_
 
 The point cloud that was colourized by image four had the same problem as the point cloud colourized by image 3 which shows the vertical line above the lockers veering upward as the lockers move away from where the image was taken. To try and mitigate this error the group then used both image 3 and 4 and averaged the RGB values to colourize our point cloud which can be seen in figure 14 below.
 
-![](RackMultipart20230823-1-fhl511_html_8b8ff613eaa458c2.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/8341fd28-487f-4b74-b166-be520fa5941f)
+
 
 _Figure 14: Colourized point cloud using averages from images 3 and 4_
 
 This method did not work as the group had hoped, for example, the vertical lines on the top of the lockers the group imagined they would move halfway between the two images but since we are dealing with RGB values they did not adjust much and mostly showed two values where there was a discrepancy between the two images. This 'double lines' can be shown clearly in the writing on the one locker in figures 15 below.
 
-![](RackMultipart20230823-1-fhl511_html_3c03c5a3f20df09f.png) ![](RackMultipart20230823-1-fhl511_html_edca29fadd258647.png) ![](RackMultipart20230823-1-fhl511_html_f7661a78625f8498.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/f5d4a985-df05-4bf5-a6ac-1aed813224c9)![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/97cbdd05-a649-4a42-a854-84ef55e6ed21)![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/822223a0-5c9b-4c7c-a4a9-ef16ef3f1b1c)
 
 _Figure 15: Comparison between image 3 (left), image 4 (right), average of both (middle)_
 
@@ -249,17 +261,19 @@ As you can see with image 3 on the left, the average in the middle, and image 4 
 
 Now to mitigate this new error the group decided to split the point cloud into two different sections and clourized them using the images closest. The group split the lockers down the middle and used the four lockers on the left to be colourized by image 3 and the four lockers on the right to be colourized by image 4. The resulting poont cloud can be found in figure 16 below.
 
-![](RackMultipart20230823-1-fhl511_html_5ab48803322a8d29.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/366a759b-3cd9-4686-b963-bf764d621079)
+
 
 _Figure 16: Final colourized point cloud using the left side of image 3 and right side of image 4_
 
 In this point cloud the group ends up with the vertical lines on each side very close to their true location and there are no double lines on any of the writing due to the average error mentioned before. This colourization method worked out very well for the yellow group and can be shown below how accurate the colour is to the actual images.
 
-![](RackMultipart20230823-1-fhl511_html_6df173476df4413a.png) ![](RackMultipart20230823-1-fhl511_html_8c8f8540be80bb40.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/f5402265-6520-46ee-b12c-6e361c366450)![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/aef2e4f0-f1f4-4f64-b208-5c54723a2657)
 
 _Figure 17: Comparison of sticker on lockers between colourized point cloud and image_
 
-![](RackMultipart20230823-1-fhl511_html_8bbda02f4ba74e8d.png) ![](RackMultipart20230823-1-fhl511_html_6f4b2010353fa676.png)
+![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/da3a530f-d4ec-4f81-8a1e-c47c076f8469)![image](https://github.com/connorgood11/ENGO531_Lab4_Terrestrial-Laser-Scanning-and-Point-Cloud-Colourization/assets/77460425/4bd1d74e-51c1-4d18-a954-215a8e6268ee)
+
 
 _Figure 18: Comparison of writing on lockers between colourized point cloud and image_
 
