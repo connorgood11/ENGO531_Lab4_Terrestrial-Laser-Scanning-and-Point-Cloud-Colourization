@@ -36,14 +36,6 @@ _Table 1: Settings of Laser Scan_
 | Resolution | 1/4 |
 | Quality | 3x |
 
-# Geometric Network
-
-For our zero-order design constraints, we made sure to have a minimally constrained datum. Our coordinate system changed origin and orientation but remained consistent in scale, since distances did not change in 3-dimensional space. From the collected laser scans, we were able to confidently pick out and use 13 out of the 18 points used as object points in Lab 3. Object points 1, 2, 3, 13, 16 were not used for this lab. Since the object points picked from the images were set as control for the network, points picked from the laser scanning were used as observation. This eliminated the rest of the datum defects. The group did not use any inner constraints.
-
-For first order design measures, the laser scanning fulfilled most of these requirements since it covers the object very consistently. However, it could be improved by doing another two scans from different angles to the object to eliminate any bias that there may be from one set up location.
-
-It could be said that the network is vastly improved when compared to networks of other labs, simply due to the laser scanner, and its capabilities. It delivers a much more reliable form of photogrammetric observations, and eliminates many datum defects, thus producing a much more reliable network.
-
 # Obtaining RGB Values
 
 A bundle adjustment was run with approximate EOPs to receive the adjusted EOPs for the images in the object space coordinates (Point clouds coordinate system) using the adjusted IOPs from lab 2 and the images in lab 3.
