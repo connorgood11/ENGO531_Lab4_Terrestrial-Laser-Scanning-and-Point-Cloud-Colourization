@@ -8,7 +8,7 @@ For this lab, we performed a laser scan of our object from the previous lab usin
 
 Laser scanning of the object was done in the room ENF 325. It was set up in the exact way as shown below in figure 1. The object is just out of view to the left of the image
 
-![](RackMultipart20230823-1-fhl511_html_3845352238d10509.jpg)
+[![](RackMultipart20230823-1-fhl511_html_3845352238d10509.jpg)](https://cdn.discordapp.com/attachments/1022237451625955378/1049818763500990524/IMG_8261.jpg)
 
 _Figure 1: Image of laser scanner set up_
 
