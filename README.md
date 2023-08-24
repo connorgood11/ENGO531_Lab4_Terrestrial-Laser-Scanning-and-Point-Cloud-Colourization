@@ -2,7 +2,7 @@
 
 # Introduction
 
-For this lab, we performed a laser scan of our object from the previous lab using a Faro scanner. The object was the same object in Lab 3, being a set of lockers in the ENF 325 room. The scan was done not measuring RGB values, which would then be added during the lab using an image taken of the object. A bundle adjustment was done to convert the object points in the images to the coordinate space of the laser scanner. From there, the non-colourized point cloud could be assigned RGB values with a MATLAB script and selected images taken during Lab 3. Then, a colourized point cloud of our object is created.
+For this lab, we performed a laser scan of our object from the previous lab using a Faro scanner. The object was the same object in Lab 3, being a set of lockers in the ENF 325 room. The scan was done not measuring RGB values, which would then be added during the lab using an image taken of the object. A bundle adjustment was done to convert the point cloud coordinates (object space) to the camera image coordinates (image space). From there, the non-colourized point cloud could be assigned RGB values with a MATLAB script and selected images taken during Lab 3. Then, a colourized point cloud of our object is created.
 
 # TLS Data Capture
 
